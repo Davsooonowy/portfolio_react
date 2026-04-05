@@ -16,7 +16,8 @@ export const SectionWrapper = ({ children, number, id, className = "", fullHeigh
     offset: ["start end", "end start"],
   });
 
-  const watermarkY = useTransform(scrollYProgress, [0, 1], [60, -60]);
+  const watermarkY = useTransform(scrollYProgress, [0, 1], [90, -90]);
+  const watermarkScale = useTransform(scrollYProgress, [0, 0.5, 1], [0.86, 1.02, 0.9]);
 
   return (
     <section
@@ -26,7 +27,7 @@ export const SectionWrapper = ({ children, number, id, className = "", fullHeigh
     >
       {number && (
         <motion.span
-          style={{ y: watermarkY }}
+          style={{ y: watermarkY, scale: watermarkScale }}
           className="watermark-number"
           aria-hidden="true"
         >
