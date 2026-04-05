@@ -7,19 +7,19 @@ const projects = [
     name: "TripWhizz",
     desc: "Full-stack trip planning app with itinerary scheduling and map integration.",
     tech: "Django · React · PostgreSQL",
-    url: "https://github.com/davsooonowy",
+    url: "https://github.com/davsooonowy/TripWhizz",
   },
   {
     name: "Darwin Simulation",
     desc: "Natural ecosystem simulation with genetic algorithms and evolutionary behavior.",
     tech: "Java · JavaFX",
-    url: "https://github.com/davsooonowy",
+    url: "https://github.com/davsooonowy/Darwin_Simulation_Project",
   },
   {
     name: "SpeedTyping App",
     desc: "Real-time typing game with WPM tracking, accuracy stats, and progress history.",
     tech: "React · TypeScript",
-    url: "https://github.com/davsooonowy",
+    url: "https://github.com/davsooonowy/SpeedTyping-App",
   },
 ];
 
