@@ -17,7 +17,7 @@ const contacts: Contact[] = [
 ];
 
 export const ContactSection = () => (
-  <SectionWrapper id="contact" number="06" fullHeight className="py-40">
+  <SectionWrapper id="contact" number="07" fullHeight className="py-40">
     <div className="max-w-6xl mx-auto px-6 w-full">
       <div className="text-center mb-16">
         <ScrollReveal>

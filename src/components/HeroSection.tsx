@@ -2,6 +2,7 @@ import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
+import heroPhoto from "@/assets/hero_page_photo_nobg.png";
 
 const ease = [0.16, 1, 0.3, 1];
 
@@ -95,9 +96,12 @@ export const HeroSection = () => {
                 transition={{ duration: 0.7, delay: 1.1, ease }}
                 className="animate-bob"
               >
-                <div className="w-[260px] h-[340px] sm:w-[300px] sm:h-[400px] rounded-2xl border border-dashed border-accent flex items-center justify-center">
-                  <span className="font-mono text-sm text-muted-foreground">[ Your photo here ]</span>
-                </div>
+                <img
+                  src={heroPhoto}
+                  alt="Dawid Mularczyk"
+                  className="w-[260px] sm:w-[300px] object-contain drop-shadow-2xl select-none"
+                  draggable={false}
+                />
               </motion.div>
             </motion.div>
           </div>

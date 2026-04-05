@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const links = [
   { label: "About", href: "#about" },
   { label: "Work", href: "#experience" },
+  { label: "Education", href: "#education" },
   { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
@@ -22,7 +23,7 @@ export const Navigation = () => {
   }, []);
 
   useEffect(() => {
-    const sections = ["about", "experience", "projects", "contact"];
+    const sections = ["about", "experience", "education", "projects", "contact"];
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((e) => {

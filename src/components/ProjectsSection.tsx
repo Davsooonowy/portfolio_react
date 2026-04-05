@@ -24,7 +24,7 @@ const projects = [
 ];
 
 export const ProjectsSection = () => (
-  <SectionWrapper id="projects" number="05" className="py-40 sm:py-56">
+  <SectionWrapper id="projects" number="06" className="py-40 sm:py-56">
     <div className="max-w-6xl mx-auto px-6">
       <ScrollReveal>
         <h2 className="text-section-title text-foreground mb-16">Things I've built.</h2>
