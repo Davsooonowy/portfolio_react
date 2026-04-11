@@ -41,12 +41,6 @@ const interests = [
   { emoji: "🌍", label: "GeoGuessr" },
 ];
 
-const stats = [
-  { value: "2+", label: "Years of experience" },
-  { value: "4.45", label: "University GPA" },
-  { value: "10+", label: "Technologies in daily use" },
-];
-
 const slideVariants = {
   enter: (dir: number) => ({
     x: dir > 0 ? 48 : -48,
@@ -137,20 +131,6 @@ export const AboutSection = () => {
                     <span>{item.emoji}</span>
                     {item.label}
                   </span>
-                ))}
-              </div>
-            </ScrollReveal>
-
-            {/* Stats */}
-            <ScrollReveal delay={0.45}>
-              <div className="grid grid-cols-3 gap-6 mt-14 pt-10 border-t border-border">
-                {stats.map((stat) => (
-                  <div key={stat.label}>
-                    <span className="text-4xl sm:text-[44px] font-extrabold text-accent tracking-tight">
-                      {stat.value}
-                    </span>
-                    <p className="text-[12px] text-muted-foreground mt-1 leading-snug">{stat.label}</p>
-                  </div>
                 ))}
               </div>
             </ScrollReveal>
