@@ -18,10 +18,10 @@ const Index = () => (
       {/* Full-bleed rule — the one grid-breaking element */}
       <div className="w-screen relative left-1/2 -translate-x-1/2 border-t border-border mb-16" />
       <AboutSection />
-      <TechSection />
       <ExperienceSection />
-      <EducationSection />
       <ProjectsSection />
+      <TechSection />
+      <EducationSection />
       <ContactSection />
     </main>
   </ThemeProvider>

@@ -94,7 +94,7 @@ export const TechSection = () => {
   const scrollVelocity = useVelocity(scrollY);
 
   return (
-    <SectionWrapper id="tech" number="03" className="py-40 sm:py-56">
+    <SectionWrapper id="tech" number="05" className="py-40 sm:py-56">
       <div className="max-w-6xl mx-auto px-6 mb-16">
         <ScrollReveal>
           <h2 className="text-section-title text-foreground">The tools I reach for.</h2>

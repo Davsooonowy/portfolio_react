@@ -43,7 +43,7 @@ export const HeroSection = () => {
                   transition={{ duration: 0.7, delay: 0.4, ease }}
                   className="text-display block text-foreground"
                 >
-                  Building software
+                  Backends that ship.
                 </motion.span>
                 <motion.span
                   initial={{ opacity: 0, y: 40, filter: "blur(6px)" }}
@@ -51,7 +51,7 @@ export const HeroSection = () => {
                   transition={{ duration: 0.7, delay: 0.55, ease }}
                   className="text-display block text-foreground"
                 >
-                  that scales.
+                  Agents that think.
                 </motion.span>
               </h1>
 
@@ -94,12 +94,16 @@ export const HeroSection = () => {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.7, delay: 1.1, ease }}
-                className="animate-bob"
+                className="animate-bob relative"
               >
+                {/* Tight bottom pool — visible on white */}
+                <div className="absolute -bottom-6 inset-x-6 h-44 bg-accent/50 rounded-full blur-2xl pointer-events-none dark:bg-accent/30" />
+                {/* Wider diffuse halo behind the figure */}
+                <div className="absolute top-[15%] inset-x-2 bottom-[10%] bg-accent/20 rounded-full blur-3xl pointer-events-none dark:bg-accent/12" />
                 <img
                   src={heroPhoto}
                   alt="Dawid Mularczyk"
-                  className="w-[260px] sm:w-[300px] object-contain drop-shadow-2xl select-none"
+                  className="w-[260px] sm:w-[300px] object-contain select-none relative z-10"
                   draggable={false}
                 />
               </motion.div>

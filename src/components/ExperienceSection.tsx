@@ -9,7 +9,7 @@ const jobs = [
     location: "Kraków, Poland",
     current: true,
     paragraphs: [
-      "Open-source AI tooling — contributed as full-stack engineer to an early-stage open-source AI tool. Built backend services in Django REST Framework with PostgreSQL, background processing via Celery and LangChain agents for automated workflows. Frontend in React with ShadCN UI.",
+      "Enthusiast (167 ★ on GitHub) — core contributor to an open-source agentic AI framework for e-commerce. Built backend services in Django REST Framework with PostgreSQL, Celery task queues, and LangChain-powered agent orchestration. Implemented streaming LLM responses, a custom tool integration system, and agent configuration UI in React.",
       "HealthDataNexus — cloud health data platform built with the University of Toronto. Flask, Django, GCP, Terraform, Docker, Kubernetes. REST API design, PostgreSQL schema management, microservice deployment.",
       "Admin panels · collaboration environments · E2E testing · CI/CD pipelines",
     ],
@@ -29,7 +29,7 @@ const jobs = [
 ];
 
 export const ExperienceSection = () => (
-  <SectionWrapper id="experience" number="04" className="py-40 sm:py-56">
+  <SectionWrapper id="experience" number="03" className="py-40 sm:py-56">
     <div className="max-w-6xl mx-auto px-6">
       <ScrollReveal>
         <h2 className="text-section-title text-foreground mb-20">Where I've worked.</h2>

@@ -6,34 +6,24 @@ import { ScrollReveal } from "./ScrollReveal";
 
 const projects = [
   {
-    name: "TripWhizz",
+    name: "Enthusiast",
     number: "01",
-    desc: "Full-stack trip planning app with itinerary scheduling and map integration.",
+    desc: "Open-source agentic AI framework for e-commerce — RAG, streaming LLM responses, custom tool integration, and agent orchestration. 167 ★ on GitHub.",
+    tech: "Python · Django · React · TypeScript · LangChain",
+    url: "https://github.com/upsidelab/enthusiast",
+    accentColor: "#8b5cf6",
+    gradient: "bg-gradient-to-br from-violet-500/10 to-purple-600/10",
+    border: "border-violet-500/20",
+  },
+  {
+    name: "TripWhizz",
+    number: "02",
+    desc: "Full-stack trip planning PWA with itinerary scheduling, collaborative features, and map integration.",
     tech: "Django · React · PostgreSQL",
     url: "https://github.com/davsooonowy/TripWhizz",
     accentColor: "#0ea5e9",
     gradient: "bg-gradient-to-br from-sky-500/10 to-cyan-500/10",
     border: "border-sky-500/20",
-  },
-  {
-    name: "Darwin Simulation",
-    number: "02",
-    desc: "Natural ecosystem simulation with genetic algorithms and evolutionary behavior.",
-    tech: "Java · JavaFX",
-    url: "https://github.com/davsooonowy/Darwin_Simulation_Project",
-    accentColor: "#10b981",
-    gradient: "bg-gradient-to-br from-emerald-500/10 to-green-600/10",
-    border: "border-emerald-500/20",
-  },
-  {
-    name: "SpeedTyping App",
-    number: "03",
-    desc: "Real-time typing game with WPM tracking, accuracy stats, and progress history.",
-    tech: "React · TypeScript",
-    url: "https://github.com/davsooonowy/SpeedTyping-App",
-    accentColor: "#f59e0b",
-    gradient: "bg-gradient-to-br from-amber-500/10 to-orange-500/10",
-    border: "border-amber-500/20",
   },
 ];
 
@@ -41,7 +31,7 @@ export const ProjectsSection = () => {
   const [hovered, setHovered] = useState<number | null>(null);
 
   return (
-    <SectionWrapper id="projects" number="06" className="py-40 sm:py-56">
+    <SectionWrapper id="projects" number="04" className="py-40 sm:py-56">
       <div className="max-w-6xl mx-auto px-6">
         <ScrollReveal>
           <h2 className="text-section-title text-foreground mb-16">Things I've built.</h2>
