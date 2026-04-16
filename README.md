@@ -1,73 +1,115 @@
-# React + TypeScript + Vite
+# Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Personal portfolio built with React + TypeScript + Vite. Features scroll-triggered animations, parallax section numbers, dark/light mode, and a server-side contact form.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Layer | Library |
+|---|---|
+| UI | React 18, TypeScript, Vite (SWC) |
+| Styling | Tailwind CSS 3, ShadCN UI (Radix UI) |
+| Animations | Framer Motion 11 |
+| Icons | Lucide React |
+| Routing | React Router DOM 6 |
+| Data fetching | TanStack React Query 5 |
+| Contact API | Vercel Functions, Resend, Cloudflare Turnstile |
+| Testing | Vitest, Playwright |
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Prerequisites
 
-## Expanding the ESLint configuration
+- Node.js 18+
+- npm
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+### Install
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### Environment variables
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Create a `.env.local` file for local development:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```env
+RESEND_API_KEY=re_...
+TURNSTILE_SECRET_KEY=...
+VITE_TURNSTILE_SITE_KEY=...
+```
+
+| Variable | Description |
+|---|---|
+| `RESEND_API_KEY` | Resend API key for sending contact emails |
+| `TURNSTILE_SECRET_KEY` | Cloudflare Turnstile secret (server-side verification) |
+| `VITE_TURNSTILE_SITE_KEY` | Cloudflare Turnstile site key (client-side widget) |
+
+### Run
+
+```bash
+npm run dev        # Vite dev server on http://localhost:8080
+npm run dev:api    # Vercel dev (includes API routes at /api/*)
+```
+
+Use `npm run dev:api` when working on the contact form to run the Vercel Function locally.
+
+## Commands
+
+```bash
+npm run build      # Production build → dist/
+npm run preview    # Preview production build locally
+npm run lint       # ESLint
+npm run test       # Vitest (single run)
+npm run test:watch # Vitest (watch mode)
+```
+
+## Project Structure
+
+```
+/
+├── api/
+│   └── contact.ts          # Vercel Function — contact form handler
+├── src/
+│   ├── assets/             # Static images
+│   ├── components/
+│   │   ├── ui/             # ShadCN primitives (don't edit directly)
+│   │   ├── *Section.tsx    # One file per portfolio section
+│   │   ├── SectionWrapper.tsx  # Parallax watermark + scroll container
+│   │   ├── ScrollReveal.tsx    # Scroll-triggered fade/slide/blur wrapper
+│   │   ├── Navigation.tsx      # Fixed nav with active section tracking
+│   │   ├── ThemeProvider.tsx   # Light/dark context
+│   │   └── ScrollProgress.tsx  # Top progress bar
+│   ├── hooks/              # use-mobile, use-toast
+│   ├── lib/utils.ts        # cn() helper (clsx + tailwind-merge)
+│   ├── pages/
+│   │   ├── Index.tsx       # Composes all sections
+│   │   └── NotFound.tsx
+│   └── index.css           # Tailwind directives + HSL CSS variables
+├── vercel.json             # Vercel project config
+└── vite.config.ts
+```
+
+## Sections
+
+| # | Section | ID |
+|---|---|---|
+| 01 | Hero | `#hero` |
+| 02 | About | `#about` |
+| 03 | Tech | `#tech` |
+| 04 | Experience | `#experience` |
+| 05 | Projects | `#projects` |
+| — | Education | `#education` |
+| 06 | Contact | `#contact` |
+
+## Contact API
+
+`POST /api/contact` accepts `name`, `email`, `subject`, `message`, and `turnstileToken`. Verifies the Turnstile CAPTCHA server-side before sending the email via Resend.
+
+## Deployment
+
+Deployed on Vercel. Push to `master` triggers a production deployment automatically via the Vercel Git integration.
+
+```bash
+vercel        # Preview deploy
+vercel --prod # Production deploy
 ```
